@@ -8,8 +8,12 @@ the static site generator [Hugo](https://gohugo.io/).
 The theme I chose ([hugo-tranquilpeak-theme](https://github.com/kakawait/hugo-tranquilpeak-theme))
 is included as a git submodule.
 
-In order to deploy the website, the `/public` is rsynced to one of my VPS
+In order to deploy the website, the `/public` folder is rsynced to one of my VPS
 where the [Caddy](https://caddyserver.com) webserver serves the files.
+
+```
+$ hugo && rsync -avz --delete public/ www-data@myserver.com:~/var/www/mysite
+```
 
 # License
 
