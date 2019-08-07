@@ -167,7 +167,7 @@ HF/VHF/UHF filter.
     link="/img/2019/07/mx2000n_filter_circuit_UHF.jpg" >}}
 
 ## Discussion
-The Diamond MX-2000N is an inexpensive triplexor which is off the shelf available. As so often with amateur radio stuff, the specs on the datasheet look decent, but the actual device only partially
+The Diamond MX-2000N is an inexpensive triplexor which is of the shelf available. As so often with amateur radio stuff, the specs on the datasheet look decent, but the actual device only partially
 mets them. In particular the insertion loss should be better on the higher frequencies.
 
 Whenever I read a power limit specified as "PEP", it raises suspicions. Specifying Max Power in PEP
