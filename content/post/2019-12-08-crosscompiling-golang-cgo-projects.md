@@ -70,15 +70,15 @@ To my knowledge, Debian supports at least the following architectures:
 
 With the help of [dpkg, the Debian Package Manager](https://www.dpkg.org) we can add additional architectures (e.g. `arm64`) on our host system:
 
-{{< highlight bash >}}
+```bash
 
 $ dpkg --add-architecture arm64
 
-{{< /highlight >}}
+```
 
 After updating the packages sources with `apt-get update` we are able to install now pre-compiled library packages for the target system. These packages are distinguished by the `:<architecture>` suffix. So installing the opus and portaudio libraries (and header files) for `arm64` looks like this:
 
-{{< highlight bash >}}
+```bash
 
 $ apt-get update
 $ apt-get install -y libopus-dev:arm64 \
@@ -86,7 +86,7 @@ $ apt-get install -y libopus-dev:arm64 \
                     libportaudio19-dev:arm64 \
                     libportaudio2:arm64
 
-{{< /highlight >}}
+```
 
 The Debian package manager will store the installed files on our host system in folders named after the respective architecture. For the case above, we can find the `arm64` libraries in `/usr/lib/aarch64-linux-gnu/` and the corresponding header files in `/usr/include/aarch64-linux-gnu`.
 
@@ -94,7 +94,7 @@ The Debian package manager will store the installed files on our host system in 
 
 Before we can cross compile our (c)go program, we have to set a few environment variables. We could all set them inline when calling the `go` compiler, but for the sake of clarity we will set and discuss the variables one by one.
 
-{{< highlight bash >}}
+```bash
 
 export GOOS=linux
 export GOARCH=arm64
@@ -102,7 +102,7 @@ export CGO_ENABLED=1
 export CC=aarch64-linux-gnu-gcc
 export PKG_CONFIG_PATH=/usr/lib/aarch64-linux-gnu/pkgconfig
 
-{{< /highlight >}}
+```
 
 With `GOOS` and `GOARCH` we tell the go compiler the operating system and architecture of our target system. Since our program contains C code, we have to explicitly enable `cgo` by setting `CGO_ENABLED` (`cgo` is disabled by default for cross-compiling). Instead of using the host's default C compiler (gcc), we want to use the previously installed cross compiler for `arm64`. This is accomplished by setting the `CC` variable to the C compiler of choice. Finally we have to set the `PKG_CONFIG_PATH` so that [pkg-config](https://en.wikipedia.org/wiki/Pkg-config) uses the `pkg-config` files for our target architecture. Just in case you wonder, the `pkg-config` files are installed automatically with the corresponding package library.
 
@@ -110,19 +110,19 @@ With `GOOS` and `GOARCH` we tell the go compiler the operating system and archit
 
 Once all the preparations have been done, it's just a matter of calling
 
-{{< highlight bash >}}
+```bash
 
 $ go build
 
-{{< /highlight >}}
+```
 
 In case you don't use `pkg-config` and haven't specified `LDFLAGS` with a [cgo directive](https://golang.org/cmd/cgo/) in your source code, you can specify the locations of the libraries and header files with the `-ldflags` flag:
 
-{{< highlight bash >}}
+```bash
 
 $ go build -ldflags="-Ipath/to/headerfile -Lpath/to/lib"
 
-{{< /highlight >}}
+```
 
 ## Containerize it
 
@@ -133,7 +133,7 @@ For [remoteAudio](https://github.com/dh1tw/remoteAudio) I created the repository
 
 Below you can find the Dockerfile with remoteAudio's `arm64` cross compilation chain.
 
-{{< highlight docker >}}
+```dockerfile
 
 FROM golang:1.13-buster
 LABEL os=linux
@@ -170,26 +170,26 @@ RUN GOARCH=amd64 go get github.com/gogo/protobuf/protoc-gen-gofast \
     && GOARCH=amd64 go get github.com/GeertJohan/go.rice/rice \
     && GOARCH=amd64 go get github.com/micro/protoc-gen-micro
 
-{{< /highlight >}}
+```
 
 In order to compile the program for `arm64` you just need to call from the source directory:
 
-{{< highlight bash >}}
+```bash
 
 $ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp dh1tw/remoteaudio-xcompile:linux-arm64 /bin/sh -c 'go build'
 
-{{< /highlight >}}
+```
 
 With the `-v` flag we mount the current directory of our host (`$PWD`) into the container under the path `/usr/src/myapp`. We select the same directory as our working directory with the `-w`. After generating our binary we automatically delete the container with the `--rm` flag.
 
 After the successful compilation, we find the binary in the current directory of our host system and we can confirm that it has been built for `arm64` (aarch64).
 
-{{< highlight bash >}}
+```bash
 
 $ file ./remoteAudio
 ./remoteAudio: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV), statically linked, no section header
 
-{{< /highlight >}}
+```
 
 ## Microsoft Windows
 
@@ -203,7 +203,7 @@ Fortunately, [Gary Kramlich](https://twitter.com/rw_grim) who is one of [Pidgin]
 
 This is the Dockerfile for `windows/amd64`:
 
-{{< highlight dockerfile >}}
+```dockerfile
 
 FROM rwgrim/msys2-cross
 LABEL os=windows
@@ -261,13 +261,13 @@ RUN set -ex \
 
 COPY ./scripts /scripts
 
-{{< /highlight >}}
+```
 
 Here we are installing the 3rd-party dependencies twice. Once for linking & compiling and once for the pre-build DLLs which we later extract conveniently with a script.
 
 So in order to compile our (c)go program for `windows/amd64` and extract the `dlls`, we just execute:
 
-{{< highlight bash >}}
+```bash
 
 $ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp dh1tw/remoteaudio-xcompile:windows-amd64 /bin/sh -c 'go build && /scripts/getlibs.sh .'
 [output not shown]
@@ -285,7 +285,7 @@ $ ls -al | grep '*.exe\|*.dll'
 $ file ./remoteAudio.exe
 remoteAudio.exe: PE32+ executable (console) x86-64 (stripped to external PDB), for MS Windows
 
-{{< /highlight >}}
+```
 
 ## Conclusion
 
