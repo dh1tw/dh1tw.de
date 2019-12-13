@@ -21,6 +21,7 @@ theme = "hugo-tranquilpeak-theme"
 # googleAnalytics = "UA-123-45"
 paginate = 7
 canonifyurls = true
+pygmentsUseClasses=true
 
 [permalinks]
   post = "/:year/:month/:slug/"
@@ -114,7 +115,7 @@ canonifyurls = true
 
   # Syntax highlighter, possible choice between: "highlight.js" (recommanded) and "prism.js" (experimental)
   # You can comment it to disable syntax highlighting
-  syntaxHighlighter = "highlight.js"
+  #syntaxHighlighter = "highlight.js"
 
   # Hide sidebar on all article page to let article take full width to improve reading, and enjoy wide images and cover images. (true: enable, false: disable)
   clearReading = false
@@ -181,6 +182,9 @@ canonifyurls = true
   # they have to be referred from static root. Example
   [[params.customCSS]]
     href = "css/add-on.css"
+
+  [[params.customCSS]]
+    href = "css/syntax.css"
 
   # Custom JS. Put here your custom JS files. They are loaded after the theme JS;
   # they have to be referred from static root. Example
