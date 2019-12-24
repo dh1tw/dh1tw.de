@@ -34,18 +34,18 @@ the OEM's box.
 
 So it was time for a visual inspection of the radio's inners. My eyes felt
 pretty soon on the IF filter stage. On top of the plastic housing of the 455kHz
-filters (CF5, CF3 and CF2) sweat beads and some sort of cristals were clearly
+filters (CF5, CF3 and CF2) sweat beads and some sort of crystals were clearly
 visible.
 
 {{< figure src="/img/2019/07/ft857_sweat_beads1.jpg" link="/img/2019/07/ft857_sweat_beads1.jpg">}}
 
 {{< figure src="/img/2019/07/ft857_sweat_beads2.jpg" link="/img/2019/07/ft857_sweat_beads2.jpg">}}
 
-The pictures above shows the "sweat beats" and cristals formed on the filter's
+The pictures above shows the "sweat beats" and crystals formed on the filter's
 plastic enclosure.
 
 Fortunately, replacement filters are inexpensive (less than 10€) and commonly
-available from large eletronics distributers or ebay.
+available from large electronics distributors or ebay.
 
 I decided to replace the three TOKO filters with pin compatible filters
 from Murata.
@@ -58,12 +58,12 @@ from Murata.
 
 Just a word of caution: Soldering on the backside of the PCB is a bit tricky
 since small SMD components (mostly 0603) are located nearby. You need good
-magnification glases or a microscope. Below is a picture of the lower part
+magnification glasses or a microscope. Below is a picture of the lower part
 of the PCB, marking the solder points of the three filters.
 
 {{< figure src="/img/2019/07/ft857_pcb_downside.jpg" link="/img/2019/07/ft857_pcb_downside.jpg" >}}
 
-Since all modern eletronics is now soldered with lead-free solder it's a bit
+Since all modern electronics is now soldered with lead-free solder it's a bit
 cumbersome to remove it. I usually add some 60/40 solder and then remove it with
 solder wig. Adding flux also helps.
 
@@ -81,20 +81,20 @@ appropriate filter.
 {{< figure src="/img/2019/07/ft857_new_filters.jpg" link="/img/2019/07/ft857_new_filters.jpg" >}}
 
 After soldering the new filters, I removed the flux with Isopropanol and waited
-a couple of hours until the alcohol was evaporated. The las thing you want to
+a couple of hours until the alcohol was evaporated. The last thing you want to
 have is a shorted circuit somewhere on the PCB ;-)
 
 {{< figure src="/img/2019/07/ft857_new_filters_pcb.jpg" link="/img/2019/07/ft857_new_filters_pcb.jpg" >}}
 
 The picture above show's under high magnification the lower part of the PCB,
-cleaned and with new filters equiped. The whole procedure took about 90 minutes.
+cleaned and with new filters equipped. The whole procedure took about 90 minutes.
 
 ## Root cause
 
 So what after all is the root cause of the failure? Well, you can find different
 speculations on the web. Some say that the plastic of the filters was just bad,
-others believe that there is a design flaw in the ciruit and that the DC bias
-voltage killed them. There are even modifcations available where folks break out
+others believe that there is a design flaw in the circuit and that the DC bias
+voltage killed them. There are even modifications available where folks break out
 vias and insert additional DC blocking caps.
 
 I personally don't think that such drastic modifications are necessary. As
