@@ -38,7 +38,7 @@ As for the radio, the transmitter was put into `CW` and keyed a morse key.
 
 ## Measurement results IC7300
 
-On the Icom IC7300, the user can define the TX delay in the onscreen menu by selecting `MENU > SET > Function > TX Delay`. While the TX Delay can be set individually for `HF`, `50M` and `70M`, only for `HF` all combinations were tested. In the result table below you click on the result to load the corresponding oscilloscope trace.
+On the Icom IC7300, the user can define the TX delay in the onscreen menu by selecting `MENU > SET > Function > TX Delay`. While the TX Delay can be set individually for `HF`, `50M` and `70M`, only for `HF` all combinations were tested. In the result table below you can click on the corresponding result to load the detailed oscilloscope trace.
 
 
 Band      | TX Delay (set)  | TX Delay (measured)
@@ -56,7 +56,7 @@ In the figure below you can see the results stitched together in an animated gif
 
 ## Measurement results IC9700
 
-On the Icom IC9700, the user can also define the TX delay in the onscreen menu. The menu path is the same as on the IC7300 (`MENU > SET > Function > TX Delay`). While the TX Delay can be set individually for `144M`, `433M` and `1200M`, only for `144` all combinations were tested. In the result table below you click on the result to load the corresponding oscilloscope trace.
+On the Icom IC9700, the user can also define the TX delay in the onscreen menu. The menu path is the same as on the IC7300 (`MENU > SET > Function > TX Delay`). While the TX Delay can be set individually for `144M`, `433M` and `1200M`, only for `144` all combinations were tested.
 
 
 Band      | TX Delay (set)  | TX Delay (measured)
