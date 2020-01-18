@@ -22,6 +22,7 @@ theme = "hugo-tranquilpeak-theme"
 paginate = 7
 canonifyurls = true
 pygmentsUseClasses=true
+enableEmoji = true
 
 [permalinks]
   post = "/:year/:month/:slug/"
