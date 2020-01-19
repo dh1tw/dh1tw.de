@@ -34,7 +34,9 @@ Probing an `RF` signal can be achieved through different ways. Since I have a 60
 
 As for the radio, the transmitter was put into `CW` and keyed a morse key.
 
-{{< figure src="/img/2020/01/IC7300_IC9700_DS1054Z.jpeg" caption="Figure 2: TX delay measurement setup (IC7300)" >}}
+{{< figure src="/img/2020/01/IC7300_IC9700_DS1054Z.jpeg"
+    link="/img/2020/01/IC7300_IC9700_DS1054Z.jpeg"
+    caption="Figure 2: TX delay measurement setup (IC7300)" >}}
 
 ## Measurement results IC7300
 
@@ -52,7 +54,9 @@ HF        | 30ms            | [30.6ms](/img/2020/01/IC7300_hf_30ms_tx_delay.png)
 
 In the figure below you can see the results stitched together in an animated gif.
 
-{{< figure src="/img/2020/01/ic7300_tx_delay_animated.gif" caption="Figure 3: IC7300 measured tx delay from 0-30ms" >}}
+{{< figure src="/img/2020/01/ic7300_tx_delay_animated.gif"
+    link="/img/2020/01/ic7300_tx_delay_animated.gif"
+    caption="Figure 3: IC7300 measured tx delay from 0-30ms" >}}
 
 ## Measurement results IC9700
 
@@ -70,7 +74,9 @@ Band      | TX Delay (set)  | TX Delay (measured)
 
 In the figure below you can see the results stitched together in an animated gif.
 
-{{< figure src="/img/2020/01/ic9700_tx_delay_animated.gif" caption="Figure 3: IC9700 measured tx delay from 0-30ms" >}}
+{{< figure src="/img/2020/01/ic9700_tx_delay_animated.gif"
+    link="/img/2020/01/ic9700_tx_delay_animated.gif"
+    caption="Figure 3: IC9700 measured tx delay from 0-30ms" >}}
 
 ## Conclusion
 
