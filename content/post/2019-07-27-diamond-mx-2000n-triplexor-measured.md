@@ -13,8 +13,7 @@ thumbnailImage: "img/2019/07/mx2000n_teaser.jpg"
 thumbnailImagePosition: "bottom"
 ---
 
-I recently bought two Diamond MX-2000N triplexors because at my current place I only have one space for
-one RF cable from the shack to the roof. The idea was to have one triplexor in the shack and another one below the antennas. Before installing the triplexors I decided to bring them on the bench and check if the claimed performance is met by the devices.
+I recently bought two Diamond MX-2000N triplexors because at my current place I only have space for one RF cable from the shack to the roof. The idea is to have one triplexor in the shack and another one below the antennas. Before installing the triplexors I decided to bring them on the bench and check if the claimed performance is met by the devices.
 
 <!--more-->
 
@@ -174,4 +173,3 @@ Whenever I read a power limit specified as "PEP", it raises suspicions. Specifyi
 is an implicit way to express that under key down the filter will blow up.
 After having a look at the components they confirmed my suspicion. The caps and coils are IMHO underrated to deal with 800W. As none of my rigs provide more than 100W and all of my antennas are properly matched,
 this is not a big deal for me. But again, I definitely wouldn't apply 800W.
-
