@@ -13,13 +13,13 @@ thumbnailImage: "img/2011/05/iStock_000008900650XSmall.jpg"
 thumbnailImagePosition: "left"
 
 ---
-PowerSDR-UI lifts the FlexRadio experience to a totally new level. Since the first release of PowerSDR-UI an avid community is forming it selve around the project. Literally, I receive now everyday feedback from new users expressing their appreciation. In this post you will find pictures which have been provided from satisfied PowerSDR-UI users. These pictures shall inspire and help you to set up your DJ Console.
+PowerSDR-UI lifts the FlexRadio experience to a new level. Since the first release of PowerSDR-UI, an avid community is forming its self around the project. I receive now everyday feedback from new users expressing their appreciation. In this post, you will find pictures that have been provided by satisfied PowerSDR-UI users. These pictures shall inspire and help you to set up your DJ Console.
 <!--more-->
 
 # Join the community
-If you are looking for knobs and buttons to control your SDR transceiver, then I highly recommend to join the [PowerSDR-UI Yahoogroup](http://groups.yahoo.com/group/PowerSDR-UI). The community will be happy to answer questions and discuss User Interface related topics with you.
+If you are looking for knobs and buttons to control your SDR transceiver, then I highly recommend joining the [PowerSDR-UI Yahoogroup](http://groups.yahoo.com/group/PowerSDR-UI). The community will be happy to answer questions and discuss User Interface related topics with you.
 
-Within the Yahoogroup users also have uploaded pictures which show exactly how they use the DJ Console to control any FlexRadio.
+Within the Yahoogroup users also have uploaded pictures that show exactly how they use the DJ Console to control any FlexRadio.
 
 Here are some examples of pictures and videos which have been created by individuals of the PSDR-UI community:
 

@@ -11,7 +11,7 @@ tags:
 thumbnailImage: "img/2012/03/broken_gu74.jpg"
 thumbnailImagePosition: "left"
 ---
-A friend of mine recently was very generous and sent me four used 4CX800 / GU74b which he didn't need anymore. The tubes where traveling a while and through several non-EU countries. Today the parcel finally arrived. I have already heard wild stories about customs, but I didn't expect this: **Customs drilled holes in two tubes and later opened them with a saw. Checkout the pictures.**
+A friend of mine recently was very generous and sent me four used 4CX800 / GU74b which he didn't need anymore. The tubes were traveling a while and through several non-EU countries. Today the parcel finally arrived. I have already heard wild stories about customs, but I didn't expect this: **Customs drilled holes in two tubes and later opened them with a saw. Check out the pictures.**
 
 <!--more-->
 
@@ -35,7 +35,7 @@ The anodes of the broken 4CX800 tubes; note: you see the damages from drilling o
 
 {{< figure src="/img/2012/03/IGP8141.jpg" link="/img/2012/03/IGP8141.jpg" >}}
 
-A look on the ceramic insulator and the anode heatsink
+A look at the ceramic insulator and the anode heatsink
 
 {{< figure src="/img/2012/03/IGP8140.jpg" link="/img/2012/03/IGP8140.jpg" >}}
 

@@ -19,7 +19,7 @@ I recently bought two Diamond MX-2000N triplexors because at my current place I 
 
 ## Physical impression
 
-The MX-2000N triplexor comes in a solid metal case. On the bottom it comes with a pre-installed velco tape. The MX-2000N has a PL-259 input plug and three output cables ending in PL-259 connectors (HF and VHF) or an N connector (UHF). The cables are about 30cm long and are made from 7mm 50 Ohm coax cable. The connectors seem to be well done - although I would have expected PTFE (Teflon) insulated connectors. Someone at Diamond had to save another 40 cents :-(. The overall physical impression is ok.
+The MX-2000N triplexor comes in a solid metal case. On the bottom, it comes with pre-installed velcro tape. The MX-2000N has a PL-259 input plug and three output cables ending in PL-259 connectors (HF and VHF) or an N connector (UHF). The cables are about 30cm long and are made from 7mm 50 Ohm coax cable. The connectors seem to be well done - although I would have expected PTFE (Teflon) insulated connectors. Someone at Diamond had to save another 40 cents :-(. The overall physical impression is ok.
 
 {{< figure src="/img/2019/07/mx2000n_2.jpg" link="/img/2019/07/mx2000n_2.jpg" >}}
 
@@ -42,7 +42,7 @@ the plane of the test leads.
 
 ## Insertion loss (S21)
 
-I measured the insertion loss of the two MX2000-N triplexors in order to check
+I measured the insertion loss of the two MX2000-N triplexors to check
 the claimed performance and the variation between the two (identical) devices.
 All unused ports were terminated with a 50 Ohm load.
 
@@ -62,7 +62,7 @@ Frequency | Insertion Loss (claimed) | Insertion loss (Device1) | Insertion loss
 
 Up to approximately 30 MHz, the Diamond MX-2000Ns are within the specification.
 Above 30MHz, the measured insertion is higher than expected. The specified
-values in the data sheet are not met.
+values in the datasheet are not met.
 
 ## Return loss (S11 / VSWR)
 
@@ -91,12 +91,12 @@ also misses the specification.
 ### Open ports
 
 Depending on the filter design it might be necessary to have all ports terminated
-with 50 Ohms in order to work properly. I performed three measurements on Device1
+with 50 Ohms to work properly. I performed three measurements on Device1
 with some unterminated ports.
 
 1. (TC1 black): HF 50Ohm terminated, VHF and UHF open
 2. (TC2 blue): HF & VHF 50 Ohm terminated, UHF open
-3. (TC3 red): HF, VHF and UHF terminated with 50 Ohms
+3. (TC3 red): HF, VHF, and UHF terminated with 50 Ohms
 
 {{< figure src="/img/2019/07/mx2000n_s11_measurements_device1_open_ports.png"
     link="/img/2019/07/mx2000n_s11_measurements_device1_open_ports.png">}}
@@ -140,11 +140,11 @@ Frequency | Isolation (claimed) | Isolation (HF-VHF) | Isolation (VHF-UHF) | Ret
 The Isolation between HF and VHF is below the specified 60dB. The values are
 not super worrisome, taking into account the power limitations of this
 triplexor and the additional filters in rx chain of an off-the-shelf receiver,
-however Diamond could have done better and at least met their own specification.
+however Diamond could have done better and at least met their specification.
 
 ## Teardown
 
-As a curious person I wanted to have a look at the filter circuit. Find below
+As a curious person, I wanted to have a look at the filter circuit. Find below
 a picture of the complete filter and some more detailed pictures of the individual
 HF/VHF/UHF filter.
 
@@ -166,8 +166,8 @@ HF/VHF/UHF filter.
     link="/img/2019/07/mx2000n_filter_circuit_UHF.jpg" >}}
 
 ## Discussion
-The Diamond MX-2000N is an inexpensive triplexor which is of the shelf available. As so often with amateur radio stuff, the specs on the datasheet look decent, but the actual device only partially
-mets them. In particular the insertion loss should be better on the higher frequencies.
+The Diamond MX-2000N is an inexpensive triplexor that is on the shelf available. As so often with amateur radio stuff, the specs on the datasheet look decent, but the actual device only partially
+meets them. In particular, the insertion loss should be better on the higher frequencies.
 
 Whenever I read a power limit specified as "PEP", it raises suspicions. Specifying Max Power in PEP
 is an implicit way to express that under key down the filter will blow up.

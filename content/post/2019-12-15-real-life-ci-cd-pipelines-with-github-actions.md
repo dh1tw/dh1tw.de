@@ -14,7 +14,7 @@ thumbnailImage: "img/2019/12/octocat-actions.jpg"
 thumbnailImagePosition: "left"
 ---
 
-Earlier this year, [Github](https://github.com) released their *workflow automation tool* [Actions](https://github.com/features/actions). Github claims to provide nothing less than *world class* CI/CD with [Actions](https://github.com/features/actions). After it's release in Autumn 2019, I took the chance and migrated the multi-stage CI Pipeline of [remoteAudio](https://github.com/dh1tw/remoteAudio) to Github Actions.
+Earlier this year, [Github](https://github.com) released their *workflow automation tool* [Actions](https://github.com/features/actions). Github claims to provide nothing less than * world-class* CI/CD with [Actions](https://github.com/features/actions). After its release in Autumn 2019, I took the chance and migrated the multi-stage CI Pipeline of [remoteAudio](https://github.com/dh1tw/remoteAudio) to Github Actions.
 
 Now it's time to share [the **good**, the **bad** and the **ugly**](https://en.wikipedia.org/wiki/The_Good,_the_Bad_and_the_Ugly) parts of [Github Actions](https://github.com/features/actions).
 
@@ -22,7 +22,7 @@ Now it's time to share [the **good**, the **bad** and the **ugly**](https://en.w
 
 ## How Actions work
 
-I have to admit that Github Actions are much more than just a Continuous Integration / Continuous Delivery tool. I fully share their official slogan of being a **workflow automation tool**. That sad, generalization unfortunately comes often with a cost. But before we go into the details, let me briefly explain how Github Actions work. The following section is not meant to replace the [official documentation](https://help.github.com/en/actions/automating-your-workflow-with-github-actions), but rather to give you an idea about the concepts behind Github Actions.
+I have to admit that Github Actions are much more than just a Continuous Integration / Continuous Delivery tool. I fully share their official slogan of being a **workflow automation tool**. That said, generalization, unfortunately, comes often with a cost. But before we go into the details, let me briefly explain how Github Actions work. The following section is not meant to replace the [official documentation](https://help.github.com/en/actions/automating-your-workflow-with-github-actions), but rather to give you an idea about the concepts behind Github Actions.
 
 {{< figure src="/img/2019/12/github-actions-workflow.jpg" height=500px caption="Figure 1: Github Actions Workflows in a nutshell" >}}
 
@@ -32,17 +32,17 @@ Everything is organized in **Workflows**. Workflows are written in [YAML](https:
 
 ### Jobs
 
-A workflow contains one or more jobs. A job basically consists of two parts. First you do the job setup (specifying build platform, matrix parameters, run strategy, ...) then you run the real tasks or *steps*, how they are called in Actions. A job can depend on previous jobs, however only on jobs within the same workflow. Jobs can run in parallel.
+A workflow contains one or more jobs. A job consists of two parts. First, you do the job setup (specifying build platform, matrix parameters, run strategy, ...) then you run the real tasks or *steps*, how they are called in Actions. A job can depend on previous jobs, however only on jobs within the same workflow. Jobs can run in parallel.
 
 ### Steps
 
-Steps are a set of tasks performed as part of a job. This is where the work gets done. Steps can either run commands or Actions. There is an evolving [Marketplace](https://github.com/marketplace?type=actions) with predefined actions which can be easily used. Steps run sequentially, but are executed in isolation (actually as containers). They only share the same filesystem.
+Steps are a set of tasks performed as part of a job. This is where the work gets done. Steps can either run commands or Actions. There is an evolving [Marketplace](https://github.com/marketplace?type=actions) with predefined actions which can be easily used. Steps run sequentially but are executed in isolation (actually as containers). They only share the same filesystem.
 
 ## My CI workflow
 
 The application [remoteAudio](https://github.com/dh1tw/remoteAudio) is an audio streaming application written in [golang](https://golang.org). It has a small footprint and runs well on embedded or desktop devices. I try [to provide binaries](https://github.com/dh1tw/remoteAudio/releases) for as many platforms as possible.
 
-For native [golang](https://golang.org) code, the compiler handles cross compilation fine. However when `cgo` and platform specific C libraries are involved, things get a bit more complicated. I have dedicated an entire blog post on [how I cross compile cgo based projects](/content/post/2019-12-08-crosscompiling-golang-cgo-projects.md), in case you are curious.
+For native [golang](https://golang.org) code, the compiler handles cross-compilation fine. However, when `cgo` and platform-specific C libraries are involved, things get a bit more complicated. I have dedicated an entire blog post on [how I cross-compile cgo based projects](/content/post/2019-12-08-crosscompiling-golang-cgo-projects.md), in case you are curious.
 
 So basically the CI pipeline consists of the following steps:
 
@@ -61,32 +61,32 @@ You can find the [complete workflow](https://github.com/dh1tw/remoteAudio/blob/m
 
 I consider this CI pipeline nothing overly complicated, but somewhat more advanced than the average example pipeline.
 
-In the following chapters we will dive into the details and discuss the **good**, the **bad** and the **ugly** parts of Github Actions.
+In the following chapters, we will dive into the details and discuss the **good**, the **bad**, and the **ugly** parts of Github Actions.
 
 ## The Good
 
 ### Beefy VMs & generous quotas
 
-Github Actions run on the [Microsoft's Azure cloud](https://azure.microsoft.com). Jobs can run on Linux, Windows and MacOS. The machines are really fast and spin up almost immediately, once the workflow has been triggered. By the time of writing, the VMs come with 2 CPU cores, 7GByte of RAM and 14Gbyte of SSD disk space. The [VM images](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/software-installed-on-github-hosted-runners) are well maintained and come with a [ton of pre-installed software](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/software-installed-on-github-hosted-runners). Workflows and jobs within workflows can be executed in parallel. Since I'm compiling remoteAudio for 6 platforms at once, this is a huge time saver. For now, Github Actions allow *unlimited* build time for public repositories. But also for private repositories, you'll get 2000 minutes / month for free.
+Github Actions run on the [Microsoft's Azure cloud](https://azure.microsoft.com). Jobs can run on Linux, Windows, and MacOS. The machines are really fast and spin up almost immediately, once the workflow has been triggered. By the time of writing, the VMs come with 2 CPU cores, 7GByte of RAM, and 14Gbyte of SSD disk space. The [VM images](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/software-installed-on-github-hosted-runners) are well maintained and come with a [ton of pre-installed software](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/software-installed-on-github-hosted-runners). Workflows and jobs within workflows can be executed in parallel. Since I'm compiling remoteAudio for 6 platforms at once, this is a huge time saver. For now, Github Actions allow *unlimited* build time for public repositories. But also for private repositories, you'll get 2000 minutes/month for free.
 
 Overall, I have to say that this is **very generous**. I couldn't be happier with the performance of the runners.
 
-If all of that isn't enough, you can set up and incorporate your own [self hosted Runners](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/using-self-hosted-runners-in-a-workflow) within Actions.
+If all of that isn't enough, you can set up and incorporate your own [self-hosted Runners](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/using-self-hosted-runners-in-a-workflow) within Actions.
 
 ### Flexibility
 
 Github Actions can either be a [Docker](https://docker.com) container or a [Node.js](https://nodejs.org) application.
-**That's pretty powerful!** You can write custom Actions in the programming language of your choice, doing (almost) everything you ever wanted to do in a CI Pipeline. Literally your imagination is the limit. This site explains everything to get you started [with your own custom Actions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/about-actions).
+**That's pretty powerful!** You can write custom Actions in the programming language of your choice, doing (almost) everything you ever wanted to do in a CI Pipeline. Your imagination is the limit. This site explains everything to get you started [with your custom Actions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/about-actions).
 
 ### Github Integration
 
-Well, Actions wouldn't be a Github service if it wasn't well integrated with other Github services. Getting started with Actions is really easy. While in other CI systems you first have to generate and manually encrypt an API access token, with Actions, this is done automatically for us.
+Well, Actions wouldn't be a Github service if it wasn't well integrated with other Github services. Getting started with Actions is easy. While in other CI systems you first have to generate and manually encrypt an API access token, with Actions, this is done automatically for us.
 
-By having a look at the [events that can trigger workflows](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows) we clearly see that Actions is much more than just a CI system. You can automate almost any aspect of your Github repo, including fine grain event triggers on Issues and Wikis.
+By having a look at the [events that can trigger workflows](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/events-that-trigger-workflows) we see that Actions is much more than just a CI system. You can automate almost any aspect of your Github repo, including fine-grain event triggers on Issues and Wikis.
 
 ### Secret Management
 
-Secret Management has been implemented straight forward and is really easy to use. Instead of storing sensitive information, like passwords within your workflow document, you store them in your Project's `Settings > Secrets` engine and query them directly from within your workflow. Github related keys, like the `GITHUB_TOKEN` are automatically available.
+Secret Management has been implemented straightforward and is easy to use. Instead of storing sensitive information, like passwords within your workflow document, you store them in your Project's `Settings > Secrets` engine and query them directly from within your workflow. Github-related keys, like the `GITHUB_TOKEN` are automatically available.
 
 {{< figure src="/img/2019/12/github-secrets.jpg"
            caption="Figure 3: Secret Management in Github">}}
@@ -106,7 +106,7 @@ Retrieving a secret is as easy as:
 
 ### Status badge
 
-Who doesn't love Status badges? Actions provides automatically a status badge for your workflow. They can be easily embedded in your `readme.md` and if desired, filtered by `branch`.
+Who doesn't love Status badges? Actions provide automatically a status badge for your workflow. They can be easily embedded in your `readme.md` and if desired, filtered by `branch`.
 
 ![Build Status](https://github.com/dh1tw/remoteAudio/workflows/Cross%20Platform%20build/badge.svg?branch=master)
 
@@ -125,9 +125,9 @@ Examples:
 - `github.sha` provides for example the SHA1 fingerprint of the current commit
 - `github.ref` provides the branch or tag name that triggered the workflow
 
-Sound good, yes? Well, actually there are a lot of fundamental values missing. Imagine you need the `branch` *and* `tag` of a commit. Well, that's not possible. Want the `short SHA` of the commit? Again, not available. **A lot of basic git information is missing**. Just have a look at the information available in [Gitlab CI workflows](https://docs.gitlab.com/ee/ci/variables/README.html#syntax-of-environment-variables-in-job-scripts) or in [TravisCI workflows](https://docs.travis-ci.com/user/environment-variables/#default-environment-variables).
+Sound good, yes? Well, there are a lot of fundamental values missing. Imagine you need the `branch` *and* `tag` of a commit. Well, that's not possible. Want the `short SHA` of the commit? Again, not available. **A lot of basic git information is missing**. Just have a look at the information available in [Gitlab CI workflows](https://docs.gitlab.com/ee/ci/variables/README.html#syntax-of-environment-variables-in-job-scripts) or [TravisCI workflows](https://docs.travis-ci.com/user/environment-variables/#default-environment-variables).
 
-So if we want to use a slugged version of our `tag`, we have to first extract it in one step. Afterwards we have to copy the output variable `VERSION` of that step into a environment variable of all consecutive steps where it is needed. Since jobs are completely independent of each other, we have to include this code in all the jobs where we need the slugged version of our tag.
+So if we want to use a slugged version of our `tag`, we have to first extract it in one step. Afterward, we have to copy the output variable `VERSION` of that step into an environment variable of all consecutive steps where it is needed. Since jobs are completely independent of each other, we have to include this code in all the jobs where we need the slugged version of our tag.
 
 ```yaml {hl_lines=[5,9]}
 # [non relevant details omitted...]
@@ -144,7 +144,7 @@ So if we want to use a slugged version of our `tag`, we have to first extract it
 
 ### Immature Actions
 
-By the time of writing, the [Github Marketplace for Actions](https://github.com/marketplace?type=actions) showed close to 2000 available Actions. After poking around with a few actions I found the maturity and quality of most Actions sobering. This applies to 3rd-party Actions and Actions maintained directly by Github. Granted, Github Actions are publicly available for just about 3 month. I fully expect that the maturity will improve over time.
+By the time of writing, the [Github Marketplace for Actions](https://github.com/marketplace?type=actions) showed close to 2000 available Actions. After poking around with a few actions I found the maturity and quality of most Actions sobering. This applies to 3rd-party Actions and Actions maintained directly by Github. Granted, Github Actions are publicly available for just about 3 months. I fully expect that maturity will improve over time.
 
 One example is the [actions/upload-release-asset](https://github.com/actions/upload-release-asset). It is quite common practice to include the semantic version tag (e.g. `v0.5.3`) in the asset's / archive's name. In other CI systems, we can include environment variables in the parameters. Here we can't. So setting `asset_path` and `asset_name` as shown below is unfortunately not possible.
 
@@ -186,7 +186,7 @@ As a workaround, we have to add the intermediary step `prepare_artifact_metadata
 
 ### Insufficient filtering
 
-Actions only allow to do some filtering on the triggered events on a *per-workflow* basis. In Continuous Integration pipelines we often want to execute jobs only when certain conditions are met. For example, we only want to create a deployment when a commit is on the `master` branch **AND** has a `tag`.
+Actions only allow doing some filtering on the triggered events on a *per-workflow* basis. In Continuous Integration pipelines, we often want to execute jobs only when certain conditions are met. For example, we only want to create a deployment when a commit is on the `master` branch **AND** has a `tag`.
 
 The `on` keyword provides some filtering:
 
@@ -205,17 +205,17 @@ on:
 
 ```
 
-**BUT**, all those filters are logically **OR**ed. By today there is no way to trigger a workflow which meet a condition on branches **AND** tags.
+**BUT**, all those filters are logically **OR**ed. By today there is no way to trigger a workflow that meets a condition on branches **AND** tags.
 
 ### Limited helper functions
 
-Actions provide [operators](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/contexts-and-expression-syntax-for-github-actions#operators) and [functions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/contexts-and-expression-syntax-for-github-actions#functions) which allow us to evaluate certain conditions or do basic string transformation. Some examples are `format( string, replaceValue0, replaceValue1, ..., replaceValueN)` or `join( element, optionalElem )`. Unfortunately, that's too basic. The missing support of RegEx hurts. In my case, the missing functions have lead to additional intermediary steps in which I had to do the string transformations in the shell.
+Actions provide [operators](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/contexts-and-expression-syntax-for-github-actions#operators) and [functions](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/contexts-and-expression-syntax-for-github-actions#functions) which allow us to evaluate certain conditions or do basic string transformation. Some examples are `format( string, replaceValue0, replaceValue1, ..., replaceValueN)` or `join( element, optionalElem )`. Unfortunately, that's too basic. The missing support of RegEx hurts. In my case, the missing functions have to lead to additional intermediary steps in which I had to do the string transformations in the shell.
 
 ## The ugly
 
 ### No shared Variables
 
-There is no way to define common variables between jobs. This sucks big time. For example, after creating a release, the release URL has to be provided to the job that actually uploads the artifact to the release. If you have implemented a *fan-in/fan-out* matrix jobs as I have with remoteAudio, you will find yourself in a situation that you can not pass the string, containing the upload URL, to the upload jobs in the matrix.
+There is no way to define common variables between jobs. This sucks big time. For example, after creating a release, the release URL has to be provided to the job that uploads the artifact to the release. If you have implemented a *fan-in/fan-out* matrix jobs as I have with remoteAudio, you will find yourself in a situation that you can not pass the string, containing the upload URL, to the upload jobs in the matrix.
 
 My workaround is to store the release URL in a *textfile*, upload it as a build artifact and then download it again in the respective upload job. This workaround looks like this:
 
@@ -278,10 +278,10 @@ deploy:
 
 ### Don't repeat yourself
 
-When I learnt programming, one of the mantras I heared over and over was: **DRY - Don't repeat yourself**. As you have seen in the examples above, we are forced to copy & paste the same code over and over. This obviously makes increasingly complex workflows less and less maintainable. By today, Github Actions doesn't provide a way for reusing code blocks, other than implementing them into Actions. I think Github should provide a way to reuse jobs or partial workflows.
+When I learned programming, one of the mantras I heard over and over was: **DRY - Don't repeat yourself**. As you have seen in the examples above, we are forced to copy & paste the same code over and over. This makes increasingly complex workflows less and less maintainable. By today, Github Actions doesn't provide a way for reusing code blocks, other than implementing them into Actions. I think Github should provide a way to reuse jobs or partial workflows.
 
 ## Summary
 
-As you can see, it took me quite some time to wrap my head around Github Actions. After a few quick wins, I unfortunately hit several times a wall. If your CI pipeline is a bit more sophisticated then the rudimentary examples, you will find yourself implementing more than one *dirty* workaround due to missing functionality or current limitations of Github Actions.
+As you can see, it took me quite some time to wrap my head around Github Actions. After a few quick wins, I, unfortunately, hit several times a wall. If your CI pipeline is a bit more sophisticated than the rudimentary examples, you will find yourself implementing more than one *dirty* workaround due to missing functionality or current limitations of Github Actions.
 
-IMHO, Github Actions is still far away from providing *worldclass CI/CD*. That said, I recognize that they are providing this service actually for free for all Open Source repositories. The underlying hardware is *kickass* and the runners are blazing fast. Let's hope, that Github listens to the users and fixes the shortcomings over time.
+IMHO, Github Actions is still far away from providing *world-class CI/CD*. That said, I recognize that they are providing this service actually for free for all Open Source repositories. The underlying hardware is *kickass* and the runners are blazing fast. Let's hope, that Github listens to the users and fixes the shortcomings over time.

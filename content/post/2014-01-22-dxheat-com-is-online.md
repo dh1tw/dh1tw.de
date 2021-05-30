@@ -17,11 +17,11 @@ thumbnailImage: "img/2014/01/dxheat.png"
 thumbnailImagePosition: "bottom"
 ---
 
-Over last 8 month I was digging deep into Web Development. The result went yesterday public, [DXHeat.com][1]. Instead of building just another Web DX Cluster, I tried to build something innovative with new, unique features. Best is to check it out by yourself!
+Over the last 8 months, I was digging deep into Web Development. The result went yesterday public, [DXHeat.com][1]. Instead of building just another Web DX Cluster, I tried to build something innovative with new, unique features. The best is to check it out by yourself!
 
 <!--more-->
 
-Within the first 48 hours the site received more than 3000 visitors. [DXHeat.com][1] was featured on a couple of blogs and I was retweeted almost a 100 times! So I'm very happy how well [DXHeat.com][1] was received in the Amateur Radio community. In the last minute before the public launch I added an easy accessible feedback form. I'm glad I did! I received more than 20 comments with valuable feedback, reporting small bugs and requesting new features.
+Within the first 48 hours, the site received more than 3000 visitors. [DXHeat.com][1] was featured on a couple of blogs and I was retweeted almost 100 times! So I'm very happy how well [DXHeat.com][1] was received in the Amateur Radio community. At the last minute before the public launch, I added an easily accessible feedback form. I'm glad I did! I received more than 20 comments with valuable feedback, reporting small bugs and requesting new features.
 
 **So let me quote the most important (unique) features of [DXHeat.com][1]:**
 
@@ -29,7 +29,7 @@ Within the first 48 hours the site received more than 3000 visitors. [DXHeat.com
   * Integration with WebSDR
   * DX Analytics with plenty of diagrams for all callsigns spotted since 2001
   * Flexible, but easy to use filters
-  * Responsive Design, looks good on phone, tables and Desktops
+  * Responsive Design, looks good on phone, tables, and Desktops
   * Spots are pushed in realtime into the browser
 
 ## Attribution
@@ -46,7 +46,7 @@ This project would have never been possible without the contribution of:
 
 {{< figure src="/img/2014/01/responsive_design.png" link="/img/2014/01/responsive_design.png" >}}
 
-DXHeat is mobile first! It looks beautiful on all devices, from Mobile over Tablet up to Desktops
+DXHeat is mobile-first! It looks beautiful on all devices, from Mobile over Tablet up to Desktops
 
 {{< figure src="/img/2014/01/dxheat-logo-retina.png" link="/img/2014/01/dxheat-logo-retina.png" >}}
 
@@ -58,7 +58,7 @@ Extensive Analytics can be generated on the fly for all callsigns
 
 {{< figure src="/img/2014/01/bandmap.png" link="/img/2014/01/bandmap.png" >}}
 
-Band Activity map shows the activity for your continent based on the current DX-Cluster spots.
+The band Activity map shows the activity for your continent based on the current DX-Cluster spots.
 
 ## Now go &#8211; and checkout [DXHeat.com][1]!
 

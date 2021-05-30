@@ -17,17 +17,17 @@ thumbnailImagePosition: "bottom"
 
 ---
 
-I was curious if the performance of our 4O3A high power Bandpass filters could be improved with additional coax stubs in parallel. We were operating at [ED1R][2] for some time now with the added stubs, and we are pleased with the results. Check out the details!
+I was curious if the performance of our 4O3A high-power Bandpass filters could be improved with additional coax stubs in parallel. We were operating at [ED1R][2] for some time now with the added stubs, and we are pleased with the results. Check out the details!
 
 <!--more-->
 
-In an earlier post I explained [how to build coaxial stubs for 20m and 40m][3]. Why 20m and 40m? A decade of hardcore contesting from stations all around the world has shown me that these two bands are the most critical ones, when it comes to In-Station interferences.
+In an earlier post, I explained [how to build coaxial stubs for 20m and 40m][3]. Why 20m and 40m? A decade of hardcore contesting from stations all around the world has shown me that these two bands are the most critical ones when it comes to In-Station interferences.
 
 ## High Power Filters with additional coax stubs
 
 {{< figure src="/img/2013/05/photo2.jpg" link="/img/2013/05/photo2.png" >}}
 
-The picture above shows the bank of 4O3A high power bandpass filters we use are ED1R. One filter per band, from 10m to 80m. On 20m and 40m a coaxial stub is connected in parallel to the filter's entrance, using a PL259 T-Connector.
+The picture above shows the bank of 4O3A high power bandpass filters we use are ED1R. One filter per band, from 10m to 80m. On 20m and 40m, a coaxial stub is connected in parallel to the filter's entrance, using a PL259 T-Connector.
 
 ## Results 40m
 
@@ -36,7 +36,7 @@ The picture above shows the bank of 4O3A high power bandpass filters we use are 
 
 _Click the diagram to enlarge_
 
-To be honest, I was very positively surprised about the result. In the diagram above you can see the S21 attenuation of the 4O3A 40m bandpass filter (red), the coax stub only (green) and the coax stub in parallel to the Bandpass filter (blue). The coax stub adds through its sharp notch another 30db(!) on the second harmonic. The attenuation from 7MHz to 14 MHz increases from 52dB to 82dB!
+To be honest, I was very positively surprised about the result. In the diagram above you can see the S21 attenuation of the 4O3A 40m bandpass filter (red), the coax stub only (green), and the coax stub in parallel to the Bandpass filter (blue). The coax stub adds through its sharp notch another 30db(!) on the second harmonic. The attenuation from 7MHz to 14 MHz increases from 52dB to 82dB!
 
 ## Results 20m
 
@@ -45,11 +45,11 @@ To be honest, I was very positively surprised about the result. In the diagram a
 
 _Click the diagram to enlarge_
 
-This diagram shows the S21 attenuation of the 4O3A 20m bandpass filter (red), the 20m coax stub only (green) and the coax stub in parallel to the bandpass filter (blue). Again, the stub's notches on 7MHz and 21MHz clearly improve the overall attenuation on these bands. Attenuation of 40m is kicked up from 63dB to 97dB. As a side effect, 15m gets also additional 25dB, resulting in a total attenuation from 20m to 15m by 95dB.
+This diagram shows the S21 attenuation of the 4O3A 20m bandpass filter (red), the 20m coax stub only (green), and the coax stub in parallel to the bandpass filter (blue). Again, the stub's notches on 7MHz and 21MHz improve the overall attenuation on these bands. The attenuation of 40m is kicked up from 63dB to 97dB. As a side effect, 15m gets also an additional 25dB, resulting in a total attenuation from 20m to 15m by 95dB.
 
 ## Conclusions
 
-The 4O3A bandpass filters are doing a tremendous job at [ED1R][2]. But unfortunately due to the direct harmonic relation of the two bands, the 20m station was still suffering severely when 40m was operating at the same time. The coax stubs give us additional attenuation between the two bands at a very inexpensive price point.
+The 4O3A bandpass filters are doing a tremendous job at [ED1R][2]. But unfortunately, due to the direct harmonic relation of the two bands, the 20m station was still suffering severely when 40m was operating at the same time. The coax stubs give us additional attenuation between the two bands at a very inexpensive price point.
 
 With the stubs in parallel to the bandpass filters, the interferences are still not completely gone, but at least have been reduced by another 30dB.
 

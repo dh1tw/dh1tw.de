@@ -15,7 +15,7 @@ thumbnailImage: "img/2010/06/ctu-logo.jpg"
 thumbnailImagePosition: "left"
 
 ---
-Last weekend I was invited to speak at the Contest Universtity in Friedrichshafen, Germany. This year I tried to visualize a rather abstract topic, the influence of technologies on the art of contesting.
+Last weekend I was invited to speak at the Contest University in Friedrichshafen, Germany. This year I tried to visualize a rather abstract topic, the influence of technologies on the art of contesting.
 
 Mainly two topics are discussed: **Information Management** and **Software Defined Radios**.
 

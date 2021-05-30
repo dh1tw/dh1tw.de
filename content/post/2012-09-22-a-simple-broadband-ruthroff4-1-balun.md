@@ -15,14 +15,14 @@ thumbnailImage: "img/2012/09/balun.jpg"
 thumbnailImagePosition: "left"
 ---
 
-During the summer break it became quite here on my blog. While Instead of chilling at the beach, I spend a lot of time on new Hardware and Software projects. Most of them are done, and now it's time to document them.
-In this blogpost I want to share the construction of a versatile 4:1 Balun. In combination with ladder line and an automatic Antenna tuner you can use any dipol on almost all frequencies.
+During the summer break, it became quiet here on my blog. While Instead of chilling at the beach, I spend a lot of time on new Hardware and Software projects. Most of them are done, and now it's time to document them.
+In this blog post, I want to share the construction of a versatile 4:1 Balun. In combination with a ladder line and an automatic Antenna tuner, you can use any dipole on almost all frequencies.
 
 <!--more-->
 
 ## Why do you need a Balun?
 
-Depending on the length of your dipol, the impedances at the feedpoint can get quite high. Built-in Automatic Tuners usually cover only impedances between 20-200Ohm. With the 4:1 Balun, we transform the high impedances down into the range of the automatic tuner.
+Depending on the length of your dipole, the impedances at the feed point can get quite high. Built-in Automatic Tuners usually cover only impedances between 20-200Ohm. With the 4:1 Balun, we transform the high impedances down into the range of the automatic tuner.
 
 ## Design
 
@@ -30,7 +30,7 @@ I decided to go with the old Ruthroff Design which can be seen in the picture be
 
 {{< figure src="/img/2012/09/ruthroff_schematic.png" link="/img/2012/09/ruthroff_schematic.png" >}}
 
-10 bifilar turns are mount on an Amidon FT-240-61 ferrite core. I used 1,5mm PTFE (Teflon) insulated wire. With high impedances, high voltages can appear on the wires, so it's better to have a proper insulation!
+10 bifilar turns are mount on an Amidon FT-240-61 ferrite core. I used 1,5mm PTFE (Teflon) insulated wire. With high impedance, high voltages can appear on the wires, so it's better to have proper insulation!
 
 The Balun is mounted in a sheet metal housing which I bought at the local electronic store. The parallel wire (450 Ohm ladder line is connected through two Banana jacks.
 
@@ -38,11 +38,11 @@ The Balun is mounted in a sheet metal housing which I bought at the local electr
 
 {{< figure src="/img/2012/09/IMG_0595.jpg" link="/img/2012/09/IMG_0595.jpg" >}}
 
-The picture above and below show the bifilar turns on the FT-240-61 ferrite core. Note: This was the first prototype which only had 7 turns!
+The picture above and below show the bifilar turns on the FT-240-61 ferrite core. Note: This was the prototype that only had 7 turns!
 
 {{< figure src="/img/2012/09/IMG_0597.jpg" link="/img/2012/09/IMG_0597.jpg" >}}
 
-In order to fix the core properly, I used on both sides of the balun a Delrin (POM &#8211; Polyoxymethyline) washer, which was mounted with a long M4 screw on the chassis.
+To fix the core properly, I used on both sides of the balun a Delrin (POM - Polyoxymethylene) washer, which was mounted with a long M4 screw on the chassis.
 
 {{< figure src="/img/2012/09/IMG_0603.jpg" link="/img/2012/09/IMG_0603.jpg" >}}
 
@@ -50,7 +50,7 @@ The Balun in action is shown below
 
 {{< figure src="/img/2012/09/IMG_0923.jpg" link="/img/2012/09/IMG_0923.jpg" >}}
 
-&#8230;with my 2x5m long Inverted-V Dipol
+with my 2x5m long Inverted-V Dipol
 
 {{< figure src="/img/2012/09/IMG_0924.jpg" link="/img/2012/09/IMG_0924.jpg" >}}
 

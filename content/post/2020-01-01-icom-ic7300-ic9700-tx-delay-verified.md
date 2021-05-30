@@ -18,19 +18,19 @@ thumbnailImage: "img/2020/01/IC7300_IC9700_tx_delay_teaser.jpeg"
 thumbnailImagePosition: "bottom"
 ---
 
-Both ICOM radios, the [IC7300](https://icomamerica.com/en/products/amateur/hf/7300/default.aspx) and the [IC9700](https://www.icomamerica.com/en/products/amateur/hf/9700/default.aspx) allow a variable transmission (TX) delay. This comes in handy if external peripherals like amplifiers and / or pre-amplifiers are used. These devices often have slow mechanical relays. It is good practice to wait until the complete transmission chain is ready before RF is applied. Out of curiosity, I measured and verified the adjustable tx delay on both radios.
+Both ICOM radios, the [IC7300](https://icomamerica.com/en/products/amateur/hf/7300/default.aspx) and the [IC9700](https://www.icomamerica.com/en/products/amateur/hf/9700/default.aspx) allow a variable transmission (TX) delay. This comes in handy if external peripherals like amplifiers and/or pre-amplifiers are used. These devices often have slow mechanical relays. It is good practice to wait until the complete transmission chain is ready before RF is applied. Out of curiosity, I measured and verified the adjustable tx delay on both radios.
 
 <!--more-->
 
 ## Measurement setup
 
-For this measurement, the two relevant signals from our radio(s) are `PTT OUT` and `RF`. **The goal is to measure the time delay between the two signals**. `PTT OUT` is used to key external devices like amplifiers. The exact name of this signal differs amongst radios and manufactures, but the principle is always the same. Basically the radio will pull down the signal to Ground when the radio is keyed. `RF` is the generate Radio Frequency *RF*.
+For this measurement, the two relevant signals from our radio(s) are `PTT OUT` and `RF`. **The goal is to measure the time delay between the two signals**. `PTT OUT` is used to key external devices like amplifiers. The exact name of this signal differs amongst radios and manufacturers, but the principle is always the same. The radio will pull down the signal to the Ground when the radio is keyed. `RF` is the generate Radio Frequency *RF*.
 
 {{< figure src="/img/2020/01/tx-delay-measurement-setup.png" caption="Figure 1: Schematic of the TX delay measurement setup" >}}
 
 Measuring `PTT OUT` is quite simple. In the case of the Icom IC9700, the radio already provides a DC voltage on the signal line since `PTT IN` and `PTT OUT` share the same physical connector/pin ([@ICOM WHY???](https://gfycat.com/farsamekinkajou)). For the IC7300 we have to add positive DC voltage (inline with a >100k resistor) to simulate an external power amplifier. `PTT OUT` is tracked on `CH1` (yellow trace) of the oscilloscope.
 
-Probing an `RF` signal can be achieved through different ways. Since I have a 60dB / 100W attenuator, I choose to connect the radios `RF OUT` through the attenuator to the oscilloscope. Since my [Rigol DS1054Z](https://www.rigol.eu/products/digital-oscilloscopes/1000z/) only has High Impedance inputs, I terminated the coax with a 2W / 50 Ohms resistor. The `RF` signal is tracked on `CH2` (blue trace) of the oscilloscope.
+Probing an `RF` signal can be achieved in different ways. Since I have a 60dB / 100W attenuator, I choose to connect the radios `RF OUT` through the attenuator to the oscilloscope. Since my [Rigol DS1054Z](https://www.rigol.eu/products/digital-oscilloscopes/1000z/) only has High Impedance inputs, I terminated the coax with a 2W / 50 Ohms resistor. The `RF` signal is tracked on `CH2` (blue trace) of the oscilloscope.
 
 As for the radio, the transmitter was put into `CW` and keyed a morse key.
 
@@ -80,6 +80,6 @@ In the figure below you can see the results stitched together in an animated gif
 
 ## Conclusion
 
-On both radios, the variable TX delay works as expected. When the TX delay is set to 0ms/*OFF*, the radio still has an internal delay of a few milliseconds before power is applied to the antenna jack. This is totally fine and make sense. It protects the internal RX/TX relay(s). One both radios no major deviation was observed from the nominal and measured values.
+On both radios, the variable TX delay works as expected. When the TX delay is set to 0ms/*OFF*, the radio still has an internal delay of a few milliseconds before power is applied to the antenna jack. This is fine and makes sense. It protects the internal RX/TX relay(s). On both radios, no major deviation was observed from the nominal and measured values.
 
-ICOM has implemented the variable TX delay properly. It has been thoughtful to allow individual TX delays for different bands. However I don't understand why there is just a single physical `PTT OUT` signal. On HF this may still make sense since most modern amplifiers support HF + 6m. But on the IC9700 **I would have expected one `PTT_OUT` signal per band**. I'm not aware of any setup where it would make sense to key the 144MHz AND 433MHz AND 1296MHz amplifier at the same time. It just doesn't make sense. There is plenty of space available on the backside of the radio. **@ICOM, please fix this with the IC9700 MK2.**
+ICOM has implemented the variable TX delay properly. It has been thoughtful to allow individual TX delays for different bands. However, I don't understand why there is just a single physical `PTT OUT` signal. On HF this may still make sense since most modern amplifiers support HF + 6m. But on the IC9700 **I would have expected one `PTT_OUT` signal per band**. I'm not aware of any setup where it would make sense to key the 144MHz AND 433MHz AND 1296MHz amplifier at the same time. It just doesn't make sense. There is plenty of space available on the backside of the radio. **@ICOM, please fix this with the IC9700 MK2.**

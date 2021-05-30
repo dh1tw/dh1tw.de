@@ -16,12 +16,12 @@ thumbnailImage: "img/2009/09/title.jpg"
 thumbnailImagePosition: "left"
 ---
 
-Today, I had the possibility to measure the performance of the well known ICE bandpass filters. Read more about the measurement results.
+Today, I could measure the performance of the well-known ICE bandpass filters. Read more about the measurement results.
 <!--more-->
 
 # Introduction
 
-A set of bandpass filters are a necessary in a multi signal environment. Almost all contesters have already experienced the problems of signal distortion in a multi transmitter environment. Luckily bandpass filters help us to reduce the interferences between various transmitters.
+A set of bandpass filters are necessary for a multi-signal environment. Almost all contesters have already experienced the problems of signal distortion in a multi-transmitter environment. Luckily bandpass filters help us to reduce the interferences between various transmitters.
 
 Today there are bandpass filters available from:
 
@@ -35,7 +35,7 @@ A good construction manual of a 6 / 9 band filter set can be found on the websit
 
 # Measurement setup
 
-As usually I used my "poor man's" Vector Network Analyzer (VNA) from TAPR / Tentec.
+As usual, I used my "poor man's" Vector Network Analyzer (VNA) from TAPR / Tentec.
 
 In all diagrams <strong><span style="color: #ff0000;">S21 (forward transmission)</span></strong> and <span style="color: #008000;"><strong>S11 (reflexion / impedeance matching)</strong></span> were measured. The schematic and the picture below show the measurement setup.
 
@@ -73,4 +73,4 @@ In all diagrams <strong><span style="color: #ff0000;">S21 (forward transmission)
 
 # Conclusions
 
-The filters are well adjusted and perform as expected. Please note that on higher frequencies (15m and 10m) the transmission losses increase. If you don't really need the filter on this band you should turn it off in order not to waste these 1,5 - 2dB!
+The filters are well adjusted and perform as expected. Please note that on higher frequencies (15m and 10m) the transmission losses increase. If you don't need the filter on this band you should turn it off in order not to waste this 1,5 - 2 dB!

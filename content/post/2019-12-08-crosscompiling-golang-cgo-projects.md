@@ -15,23 +15,23 @@ thumbnailImage: "img/2019/12/gopher-with-c-book.jpg"
 thumbnailImagePosition: "left"
 ---
 
-One of [Golang](https://golang.org)'s strength is that it supports cross compiling to literally any common Operating System and CPU architecture out of the box. However that's only true for projects written in pure Go. Normally that's not a problem, but sometimes we depend on 3rd-party C libraries... and that's when things tend to get complicated.
+One of [Golang](https://golang.org)'s strengths is that it supports cross-compiling to any common Operating System and CPU architecture out of the box. However, that's only true for projects written in pure Go. Normally that's not a problem, but sometimes we depend on 3rd-party C libraries... and that's when things tend to get complicated.
 
-In this post I will explain how you can cross compile your [cgo](https://golang.org/cmd/cgo) project for multiple operating systems and architectures in a clear and structured manner.
+In this post, I will explain how you can cross-compile your [cgo](https://golang.org/cmd/cgo) project for multiple operating systems and architectures in a clear and structured manner.
 
 <!--more-->
 
 ## Some Background
 
-Over the last few years I've been writing software mainly for remote controlling our Amateur Radio station over the Internet. Most of these programs are written in [Go](https://golang.org) and published on my [Github profile](https://github.com/dh1tw) under permissive Open Source licenses. The most prominent program is [remoteAudio](https://github.com/dh1tw/remoteAudio), a low latency, multi user audio streaming application.
+Over the last few years, I've been writing software mainly for remote controlling our Amateur Radio station over the Internet. Most of these programs are written in [Go](https://golang.org) and published on my [Github profile](https://github.com/dh1tw) under permissive Open Source licenses. The most prominent program is [remoteAudio](https://github.com/dh1tw/remoteAudio), a low latency, multi-user audio streaming application.
 
 While one can achieve a lot in native [Go](https://golang.org), sometimes there is just no way around using C libraries. One could re-implement those libraries in Go, but often it's just not feasible. In the case of [remoteAudio](https://github.com/dh1tw/remoteAudio), I'm using for example the [OPUS audio codec](https://www.opus-codec.org/) and [Portaudio](http://www.portaudio.com/) for handling cross-platform Audio APIs. Both of them are written in C.
 
 ## Assumptions
 
-I personally like [Debian](https://www.debian.org) flavored Linux systems. That's what this article has been written for. However it should be also valid for all other Linux distros. In most cases you just have to replace the `apt-get` package manager commands with the one's from your distro.
+I personally like [Debian](https://www.debian.org) flavored Linux systems. That's what this article has been written for. However, it should be also valid for all other Linux distros. In most cases, you just have to replace the `apt-get` package manager commands with the ones from your distro.
 
-There are two important terms which have to be defined:
+Two important terms have to be defined:
 
 | Term              | Meaning                                                          |
 | ----------------- | ---------------------------------------------------------------- |
@@ -45,7 +45,7 @@ In my case, the *Host System* is **Linux/amd64**.
 You could [build the (GCC based) cross compiler yourself](https://preshing.com/20141119/how-to-build-a-gcc-cross-compiler),
 but fortunately, the popular Linux distributions provide them pre-compiled with all dependencies through their respective package managers.
 
-In order to get started you need at least the cross-compiler and the platform specific standard library (*libc*). The corresponding packages are:
+To get started you need at least the cross-compiler and the platform-specific standard library (*libc*). The corresponding packages are:
 
 | Operating System | Architecture | Needed package(s)       |
 | ---------------- | ------------ | ----------------------- |
@@ -59,16 +59,16 @@ In order to get started you need at least the cross-compiler and the platform sp
 | Windows          | amd64        | gcc-mingw-w64-x86-64    |
 | Windows          | i386         | gcc-mingw-w64-i686      |
 
-If your cgo program only uses the [standard C library](https://www.gnu.org/software/libc) this would actually be all you need. However, we often depend on additional libraries. For example, [remoteAudio](https://github.com/dh1tw/remoteAudio) depends also on `libopus` and `libportaudio`. Since our target architecture (e.g. `arm64`) differs from our host's architecture (`amd64`), we cannot simply install the needed libraries with `apt-get`. This would just install the `amd64` versions of those libraries.
+If your cgo program only uses the [standard C library](https://www.gnu.org/software/libc) this would be all you need. However, we often depend on additional libraries. For example, [remoteAudio](https://github.com/dh1tw/remoteAudio) depends also on `libopus` and `libportaudio`. Since our target architecture (e.g. `arm64`) differs from our host's architecture (`amd64`), we cannot simply install the needed libraries with `apt-get`. This would just install the `amd64` versions of those libraries.
 
 ## Add support for target architectures
 
-Debian based distributions come fortunately with [Multiarch support](https://wiki.ubuntu.com/MultiarchCross). This allows us to install library packages for multiple architectures on the same machine. Dependencies will be automatically correctly resolved.
+Debian-based distributions come fortunately with [Multiarch support](https://wiki.ubuntu.com/MultiarchCross). This allows us to install library packages for multiple architectures on the same machine. Dependencies will be automatically correctly resolved.
 
 To my knowledge, Debian supports at least the following architectures:
 `amd64`, `i386`, `armel`, `armhf`, `arm64`, `mips`, `powerpc` and `ppc64el`.
 
-With the help of [dpkg, the Debian Package Manager](https://www.dpkg.org) we can add additional architectures (e.g. `arm64`) on our host system:
+With the help of [dpkg, the Debian Package Manager](https://www.dpkg.org) we can add additional architectures (e.g. `arm64`) to our host system:
 
 ```bash
 
@@ -76,7 +76,7 @@ $ dpkg --add-architecture arm64
 
 ```
 
-After updating the packages sources with `apt-get update` we are able to install now pre-compiled library packages for the target system. These packages are distinguished by the `:<architecture>` suffix. So installing the opus and portaudio libraries (and header files) for `arm64` looks like this:
+After updating the packages sources with `apt-get update` we can install now pre-compiled library packages for the target system. These packages are distinguished by the `:<architecture>` suffix. So installing the opus and portaudio libraries (and header files) for `arm64` looks like this:
 
 ```bash
 
@@ -92,7 +92,7 @@ The Debian package manager will store the installed files on our host system in 
 
 ## Preparing the environment
 
-Before we can cross compile our (c)go program, we have to set a few environment variables. We could all set them inline when calling the `go` compiler, but for the sake of clarity we will set and discuss the variables one by one.
+Before we can cross-compile our (c)go program, we have to set a few environment variables. We could all set them inline when calling the `go` compiler, but for the sake of clarity, we will set and discuss the variables one by one.
 
 ```bash
 
@@ -104,7 +104,7 @@ export PKG_CONFIG_PATH=/usr/lib/aarch64-linux-gnu/pkgconfig
 
 ```
 
-With `GOOS` and `GOARCH` we tell the go compiler the operating system and architecture of our target system. Since our program contains C code, we have to explicitly enable `cgo` by setting `CGO_ENABLED` (`cgo` is disabled by default for cross-compiling). Instead of using the host's default C compiler (gcc), we want to use the previously installed cross compiler for `arm64`. This is accomplished by setting the `CC` variable to the C compiler of choice. Finally we have to set the `PKG_CONFIG_PATH` so that [pkg-config](https://en.wikipedia.org/wiki/Pkg-config) uses the `pkg-config` files for our target architecture. Just in case you wonder, the `pkg-config` files are installed automatically with the corresponding package library.
+With `GOOS` and `GOARCH`, we tell the go compiler the operating system and architecture of our target system. Since our program contains C code, we have to explicitly enable `cgo` by setting `CGO_ENABLED` (`cgo` is disabled by default for cross-compiling). Instead of using the host's default C compiler (GCC), we want to use the previously installed cross compiler for `arm64`. This is accomplished by setting the `CC` variable to the C compiler of choice. Finally, we have to set the `PKG_CONFIG_PATH` so that [pkg-config](https://en.wikipedia.org/wiki/Pkg-config) uses the `pkg-config` files for our target architecture. Just in case you wonder, the `pkg-config` files are installed automatically with the corresponding package library.
 
 ## Compile
 
@@ -126,12 +126,12 @@ $ go build -ldflags="-Ipath/to/headerfile -Lpath/to/lib"
 
 ## Containerize it
 
-While we could certainly install everything required for cross compiling on our host system,
-I personally prefer to keep my host system as *clean* as possible. Over the years, [Docker](https://www.docker.com/) has become one of my indispensible tools. It's the perfect tool for our cross-compilation chains.
+While we could certainly install everything required for cross-compiling on our host system,
+I prefer to keep my host system as *clean* as possible. Over the years, [Docker](https://www.docker.com/) has become one of my indispensable tools. It's the perfect tool for our cross-compilation chains.
 
 For [remoteAudio](https://github.com/dh1tw/remoteAudio) I created the repository [remoteAudio-xcompile](https://github.com/dh1tw/remoteAudio-xcompile) which contains Dockerfiles for each combination of os/architecture I support. These containers can be build either locally or downloaded from the [Docker Hub registry](https://hub.docker.com/repository/docker/dh1tw/remoteaudio-xcompile).
 
-Below you can find the Dockerfile with remoteAudio's `arm64` cross compilation chain.
+Below you can find the Dockerfile with remoteAudio's `arm64` cross-compilation chain.
 
 ```dockerfile
 
@@ -172,7 +172,7 @@ RUN GOARCH=amd64 go get github.com/gogo/protobuf/protoc-gen-gofast \
 
 ```
 
-In order to compile the program for `arm64` you just need to call from the source directory:
+To compile the program for `arm64` you just need to call from the source directory:
 
 ```bash
 
@@ -193,11 +193,11 @@ $ file ./remoteAudio
 
 ## Microsoft Windows
 
-Cross compiling cgo applications from Linux host systems for Microsoft Windows is a bit more complicated and requires a few extra steps. [**MinGW** (Minimalist GNU for Windows)](http://mingw.org/) provides a development environment for native Microsoft Windows applications. MinGW is available on Linux and Windows. MinGW works out of the box if no 3rd-party C-Runtime libraries (DLLs) are involved... and that's unfortunately again a problem since remoteAudio depends on 3rd-party libraries like opus and portaudio. How cool would it be if we could also install our dependencies with a package manager like Debian's `apt-get` ?
+Cross-compiling cgo applications from Linux host systems for Microsoft Windows is a bit more complicated and requires a few extra steps. [**MinGW** (Minimalist GNU for Windows)](http://mingw.org/) provides a development environment for native Microsoft Windows applications. MinGW is available on Linux and Windows. MinGW works out of the box if no 3rd-party C-Runtime libraries (DLLs) are involved... and that's unfortunately again a problem since remoteAudio depends on 3rd-party libraries like opus and portaudio. How cool would it be if we could also install our dependencies with a package manager like Debian's `apt-get` ?
 
 **MSYS2 & Pacman to the rescue!**
 
-As it turns out, some smart folks have solved this problem and created [MSYS2](https://www.msys2.org/) which is a software distro and building platform for Windows. MSYS2 is built around the MinGW-w64 toolchain and comes with a ported version of [Arch Linux'](https://www.archlinux.org/) package manager [Pacman](https://wiki.archlinux.org/index.php/Pacman). MSYS2 provides read-to-go installers for Windows, but installing MSYS2 on Linux is a bit more work.
+As it turns out, some smart folks have solved this problem and created [MSYS2](https://www.msys2.org/) which is a software distro and building platform for Windows. MSYS2 is built around the MinGW-w64 toolchain and comes with a ported version of [Arch Linux'](https://www.archlinux.org/) package manager [Pacman](https://wiki.archlinux.org/index.php/Pacman). MSYS2 provides ready-to-go installers for Windows, but installing MSYS2 on Linux is a bit more work.
 
 Fortunately, [Gary Kramlich](https://twitter.com/rw_grim) who is one of [Pidgin](https://pidgin.im/)'s core developers, has done all the hard work for us and created the Debian based [msys2-cross](https://hub.docker.com/r/rwgrim/msys2-cross) Container. Using this container as the base image, I created containers to compile remoteAudio for `windows/amd64` and `windows/i386` directly from Linux. You can find the Dockerfiles in the respective folders of the [remoteAudio-xcompile repository](https://github.com/dh1tw/remoteAudio-xcompile).
 
@@ -265,7 +265,7 @@ COPY ./scripts /scripts
 
 Here we are installing the 3rd-party dependencies twice. Once for linking & compiling and once for the pre-build DLLs which we later extract conveniently with a script.
 
-So in order to compile our (c)go program for `windows/amd64` and extract the `dlls`, we just execute:
+So to compile our (c)go program for `windows/amd64` and extract the `dlls`, we just execute:
 
 ```bash
 
@@ -289,4 +289,4 @@ remoteAudio.exe: PE32+ executable (console) x86-64 (stripped to external PDB), f
 
 ## Conclusion
 
-In this article I've explained my approach on how to cross compile Go applications which depend on C libraries for different architectures & operating systems. Putting the Cross compilation chains into Docker containers does not only keep our host system clean, it also documents build process and shows the needed dependencies. As a bonus, the containers integrate nicely in our Continous Integration & Continous Delivery (CI/CD) Pipeline so that we can generate a [releases for a variety of platforms](https://github.com/dh1tw/remoteAudio/releases) without any additional effort.
+In this article, I've explained my approach on how to cross-compile Go applications that depend on C libraries for different architectures & operating systems. Putting the Cross-compilation chains into Docker containers does not only keep our host system clean, but it also documents the build process and shows the needed dependencies. As a bonus, the containers integrate nicely in our Continous Integration & Continous Delivery (CI/CD) Pipeline so that we can generate [releases for a variety of platforms](https://github.com/dh1tw/remoteAudio/releases) without any additional effort.

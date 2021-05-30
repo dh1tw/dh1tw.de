@@ -28,7 +28,7 @@ _Eat as much as you can (without exploding) 😉_
 
 {{< figure src="/img/2011/01/badinner4.jpg" link="/img/2011/01/badinner4.jpg" >}}
 
-**Front:** LU1BR Luis, LW7DX Horacio, LU4FPZ Sebastian, KØIR Ralph, LU9DO Juan Carlos, W3WL Wes; **Middle:** LU6ETB Arturo, LU2DKT Eduardo, N1DG Don, 9V1YC James, LU2AH Ron, LU7DW Claudio, LU7DW Arturo, ND2T Tom, LU2DSL Eduardo, N4GRN George, EY8MM Nodir, LU4DXU Henry; **Rear:** N6MZ Mike, VE3EJ John, W7EW Lew, K6AW Steve, K9ZO Ralph, DH1TW Toby, WB9Z Jerry
+**Front:** LU1BR Luis, LW7DX Horacio, LU4FPZ Sebastian, KØIR Ralph, LU9DO Juan Carlos, W3WL Wes; **Middle:** LU6ETB Arturo, LU2DKT Eduardo, N1DG Don, 9V1YC James, LU2AH Ron, LU7DW Claudio, LU7DW Arturo, ND2T Tom, LU2DSL Eduardo, N4GRN George, EY8MM Nodir, LU4DXU Henry; **Rear:** N6MZ Mike, VE3EJ John, W7EW Lew, K6AW Steve, K9ZO Ralph, DH1TW Toby, WB9Z Jerry
 
 {{< figure src="/img/2011/01/IGP1088.jpg" link="/img/2011/01/IGP1088.jpg" >}}
 
@@ -44,4 +44,4 @@ _James 9V1YC and DH1TW_
 
 {{< figure src="/img/2011/01/IGP1089.jpg" link="/img/2011/01/IGP1089.jpg" >}}
 
-_DH1TW, Ralph K9ZO and Jerry WB9Z_
+_DH1TW, Ralph K9ZO, and Jerry WB9Z_

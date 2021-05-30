@@ -16,12 +16,12 @@ thumbnailImage: "img/2011/03/iStock_000004875670XSmall.jpg"
 thumbnailImagePosition: "left"
 
 ---
-At the end of last year I announced the "proof" that Software Defined Radios also can have buttons and knobs. At that stage the software was still a prototype and not ready for a public release. In the meantime I was working hard to eliminate bugs and implement further improvements. By today I'm happy to announce the release of PowerSDR-UI beta. This is a call for beta testing. Please feel free to download the software and participate in the beta testing phase!
+At the end of last year, I announced the "proof" that Software Defined Radios also can have buttons and knobs. At that stage, the software was still a prototype and not ready for a public release. In the meantime, I was working hard to eliminate bugs and implement further improvements. By today I'm happy to announce the release of the PowerSDR-UI beta. This is a call for beta testing. Please feel free to download the software and participate in the beta testing phase!
 <!--more-->
 
 ## Description
 
-PowerSDR-UI  is a fork of  FlexRadio Systems *PowerSDR*. It comes with all the features and bugs of that version but with one important difference: Support of an inexpensive, versatile User Interface with real knobs, sliders and buttons. On each element of the User Interface, a function of PowerSDR can be mapped (e.g. AF Gain, Filter Width,...etc). A detailed description can be found in the article I wrote about [why current SDR solutions lack of a proper User Interfaces](https://www.dh1tw.de/disc-jockeys-influence-on-sdr).
+PowerSDR-UI is a fork of  FlexRadio Systems *PowerSDR*. It comes with all the features and bugs of that version but with one important difference: Support of an inexpensive, versatile User Interface with real knobs, sliders, and buttons. On each element of the User Interface, a function of PowerSDR can be mapped (e.g. AF Gain, Filter Width,...etc). A detailed description can be found in the article I wrote about [why current SDR solutions lack proper User Interfaces](https://www.dh1tw.de/disc-jockeys-influence-on-sdr).
 
 The following two videos have been created by PowerSDR-UI users and demonstrate the integrated DJ Console with PowerSDR:
 
@@ -35,9 +35,9 @@ Japanese:
 
 ## Release note
 
-PowerSDR-UI is currently at beta status. This means that it is not perfect and that errors might appear. The intention of this release is to get feedback from the community with their various SDR based radios.
+PowerSDR-UI is currently at beta status. This means that it is not perfect and that errors might appear. This release intends to get feedback from the community with their various SDR-based radios.
 
-From a licensing point of view it is important to understand that FlexRadio Systems has divided PowerSDR in two parts. The application PowerSDR is open source (GPL license) but various drivers are closed source and may not be distributed by third parties (here: me, DH1TW). This is the reason why I can not offer an automated installer as you would expect from any program today. Instead a bit of manual work is needed. But with basic PC knowledge and the installation instruction below I'm sure you will be able to install PowerSDR-UI.
+From a licensing point of view, it is important to understand that FlexRadio Systems has divided PowerSDR into two parts. The application PowerSDR is open source (GPL license) but various drivers are closed source and may not be distributed by third parties (here: me, DH1TW). This is the reason why I can not offer an automated installer as you would expect from any program today. Instead, a bit of manual work is needed. But with basic PC knowledge and the installation instruction below I'm sure you will be able to install PowerSDR-UI.
 
 The content of the PowerSDR-UI Zip file is:
 
@@ -218,7 +218,7 @@ The following functionality can be mapped onto **rotary pulse encoders**:
 
 ## Download
 
-PowerSDR-UI has been deprecated. The code has been donated to serveral authors
+PowerSDR-UI has been deprecated. The code has been donated to several authors
 of other forks. Please check out [KE9NS' fork](https://www.ke9ns.com/flexpage.html).
 
  [1]: http://groups.yahoo.com/group/PowerSDR-UI/

@@ -14,20 +14,20 @@ thumbnailImage: "img/2020/01/vhf-tropo-teaser.jpg"
 thumbnailImagePosition: "bottom"
 ---
 
-The year 2020 started with outstanding tropospheric VHF propagation here in southern Germany. For the first time I was able to copy the VHF beacon [GB3NGI](https://www.qsl.net/gb3ngi) from Northern Irland at a stunning distance of 1300km. Read more about this great opening and listen to the audio recording I made.
+The year 2020 started with outstanding tropospheric VHF propagation here in southern Germany. For the first time, I was able to copy the VHF beacon [GB3NGI](https://www.qsl.net/gb3ngi) from Northern Irland at a stunning distance of 1300km. Read more about this great opening and listen to the audio recording I made.
 
 <!--more-->
 
 ## VHF propagation phenomenons
 
-Radio signal propagation on [VHF](https://en.wikipedia.org/wiki/Very_high_frequency) is normally limited to a few hundred kilometers, at most. However sometimes extraordinary physical effects extend temporarily the effective range well above 1000km. The two most common effects are:
+Radio signal propagation on [VHF](https://en.wikipedia.org/wiki/Very_high_frequency) is normally limited to a few hundred kilometers, at most. However, sometimes extraordinary physical effects extend temporarily the effective range well above 1000km. The two most common effects are:
 
 1. [Sporadic-E](https://en.wikipedia.org/wiki/Sporadic_E_propagation), when radio waves are reflected on small patches of unusually dense ionization within the E-layer of the ionosphere.
-2. [Tropospheric propagation](http://www.dxinfocentre.com/propagation/tr-modes.htm), when layers of hot / cold air create ducts or cause refraction.
+2. [Tropospheric propagation](http://www.dxinfocentre.com/propagation/tr-modes.htm), when layers of hot/cold air create ducts or cause refraction.
 
 ## Beacons
 
-In a nutshell, [radio beacons](https://en.wikipedia.org/wiki/Radio_beacon) are automated transmitters with a known location. They are used heavily in navigation, but also Amateur radio operators rely on them as indicators for extraordinary propagation. In Europe we fortunately have a respective amount of [active VHF/UHF/SHR radio beacons](http://www.dl8wx.de/bakenukw.htm). Most of the amateur radio beacons operate with modest power (1 - 20 watts) and omnidirectional or large beamwidth antennas.
+In a nutshell, [radio beacons](https://en.wikipedia.org/wiki/Radio_beacon) are automated transmitters with a known location. They are used heavily in navigation, but also Amateur radio operators rely on them as indicators for extraordinary propagation. In Europe, we, fortunately, have a respective amount of [active VHF/UHF/SHR radio beacons](http://www.dl8wx.de/bakenukw.htm). Most amateur radio beacons operate with modest power (1 - 20 watts) and omnidirectional or large beamwidth antennas.
 
 ## My setup
 
@@ -39,7 +39,7 @@ My setup for 144 MHz is *average*. I have a single directional [11el Yagi antenn
 
 ## My lucky morning
 
-While on a *normal* day I copy between 2-3 beacons, in the early morning hours of the 01.01.2020 I was able to copy a total of **8 radio beacons** at the same time.
+While on a *normal* day I copy between 2-3 beacons, in the early morning hours of 01.01.2020 I was able to copy a total of **8 radio beacons** at the same time.
 
 {{< figure src="/img/2020/01/tropo-ic9700-144mhz-beacon-band.png"
     link="/img/2020/01/tropo-ic9700-144mhz-beacon-band.png"
@@ -58,8 +58,8 @@ Frequency   | Beacon | Location | Distance
 144.474 MHz | DB0HRF | JO40FF   | 175km
 **144.482 MHz** | **GB3NGI**  | **IO65VB** | **1290km**
 
-Obviously, GB3NGI was the biggest surprise at a stunning distance of almost 1300km. Find below the recorded audio:
+GB3NGI was the biggest surprise at a stunning distance of almost 1300km. Find below the recorded audio:
 
 {{< soundcloud 736592476 >}}
 
-I'm licensed now for more than 20 years, but this was the first time that I was able to observe such outstanding VHF Tropo propagation. I guess 2020 really started great for me!
+I'm licensed now for more than 20 years, but this was the first time that I was able to observe such outstanding VHF Tropo propagation. I guess 2020 started great for me!

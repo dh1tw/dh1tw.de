@@ -15,7 +15,7 @@ tags:
 thumbnailImage: "img/2009/09/ft1000mp2.jpg"
 thumbnailImagePosition: "left"
 ---
-In 2007 several SDR (Software Defined Radio) kits became available for Ham Radio purpose. Since most of these kits are just single band receivers, another easy solution was needed to benefit from the PC based Signal Processing on multiple bands. With the Yaesu FT1000MP, a full coverage short wave receiver was already available in the shack.  Why not reuse the already available hardware instead of spending money for a couple of additional monoband SDRs?
+In 2007 several SDR (Software Defined Radio) kits became available for Ham Radio purposes. Since most of these kits are just single band receivers, another easy solution was needed to benefit from the PC-based Signal Processing on multiple bands. With the Yaesu FT1000MP, a full coverage short wave receiver was already available in the shack.  Why not reuse the already available hardware instead of spending money for a couple of additional monoband SDRs?
 
 After studying the schematics of Yaesu's FT1000MP it was decided to tap the IF (Intermediate Frequency) with an already available SDR-Kit. This article documents the performed analysis and conducted work necessary to perform this modification.
 <!--more-->
@@ -24,11 +24,11 @@ After studying the schematics of Yaesu's FT1000MP it was decided to tap the IF (
 
 Please note that advanced soldering skills are necessary to perform this modification. SMD soldering equipment is recommended. If this “surgery” isn't conducted with the necessary precaution, it's an easy way to damage the transceiver seriously.
 
-Please note that the author isn't liable for  any damage caused as the result of attempting to carry out this modification! Although this modification was developed under best engineering practice, there still might be other or better alternatives available to tap an IF signal.
+Please note that the author isn't liable for any damage caused as the result of attempting to carry out this modification! Although this modification was developed under best engineering practice, there still might be other or better alternatives available to tap an IF signal.
 
 # Analysis
 
-The FT1000MP has two build in receivers, which work more or less independent of each other. In each of these receivers several filters can be found. Some of them are optional and can be selected from the front end, but there are a lot of internal filters in the IF which also have to be considered while searching for the perfect tap point.
+The FT1000MP has two builds in receivers, which work more or less independently of each other. In each of these receivers, several filters can be found. Some of them are optional and can be selected from the front end, but there are a lot of internal filters in the IF which also has to be considered while searching for the perfect tap point.
 
 
 Computer Soundboards are capable to handle an input spectrum up to 192kHz. Therefore the tapped signal should be as wide as possible.
@@ -56,7 +56,7 @@ In the technical description of the first mixer circuit the following section ca
 
 At least the Sub Receiver offers theoretically a signal with 40kHz bandwidth at the output of the first mixer circuit.
 
-Obviously due to the bigger bandwidth, the tap point will be in the circuits of the Sub Receiver.
+Obviously, due to the bigger bandwidth, the tap point will be in the circuits of the Sub Receiver.
 
 
 ## Tap Point Selection
@@ -117,7 +117,7 @@ The tap point is located on the RX2-Unit board. This board is mounted on the rig
 
     Please note, that the resistor (R1) and trimmer (Trimm1) have been installed on the PCB of the SDR.
 
-    In case an FT1000MP DC without internal power supply is used, an SDR can be installed internally. The following steps are     **optional**.
+    In case an FT1000MP DC without an internal power supply is used, an SDR can be installed internally. The following steps are     **optional**.
 
 10. Unscrew the fan
 
@@ -131,7 +131,7 @@ The tap point is located on the RX2-Unit board. This board is mounted on the rig
 
 12. Reinstall the fan
 
-13. Secure the SDR with double sided adhesive tape
+13. Secure the SDR with double-sided adhesive tape
 
 14. Put a couple of windings of the Audio Cable (I/Q Signal) on a ferrite core
 
@@ -143,8 +143,8 @@ The tap point is located on the RX2-Unit board. This board is mounted on the rig
 
 # Appendix
 
-The SDR used is a 40m Softrock Clone sold by the German Ham-Radio Magazine “Funkamateur”. 
-The following modifications were made on the SDR:
+The SDR used is a 40m Softrock Clone sold by the German Ham-Radio Magazine “Funkamateur”. 
+The following modifications were made to the SDR:
 
 - The fixed frequency crystal was replaced with a tunable PLL circuit utilizing the CY27EE16 Chip from Cypress Semiconductors
 - PLL was tuned to 1,842 MHz (1,842 : 4 = 460,05kHz)

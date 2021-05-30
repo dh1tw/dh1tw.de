@@ -13,15 +13,15 @@ thumbnailImage: "img/2013/03/oxidized_cable.jpg"
 thumbnailImagePosition: "left"
 ---
 
-This question bugged me after trying to exchange the connectors of a 25m long Aircell7 coax cable. During preparation I discovered a black inner conductor. I seems water entered the cable. Do I have to throw it away? Read more to discover a probably unexpected answer!
+This question bugged me after trying to exchange the connectors of a 25m long Aircell7 coax cable. During preparation, I discovered a black inner conductor. It seems water entered the cable. Do I have to throw it away? Read more to discover a probably unexpected answer!
 
 <!--more-->
 
 ## Water in the Cable
 
-It's the nightmare of all hams: water inside the coax cable. Over years, I heard over and over that once water has entered the cable, it becomes useless and has to be thrown away. From my times at university I remembered that due to the  _Skin Effect_, RF energy tends to flow on the skin, rather than the inner core of the conductor. Since copper oxide conducts much worse than copper, theory seems to confirm the country saying.
+It's the nightmare of all hams: water inside the coax cable. Over years, I heard over and over that once the water has entered the cable, it becomes useless and has to be thrown away. From my times at university I remembered that due to the  _Skin Effect_, RF energy tends to flow on the skin, rather than the inner core of the conductor. Since copper oxide conducts much worse than copper, the theory seems to confirm the country saying.
 
-But considering the price of 2,50€/m I felt a stich in my heart when thinking about throwing away this 25m role of [Aircell7][1]. Instead of accepting defeat, I pulled out my [Vector Network Analyzer][2] and measured the attenuation from 1-500MHz.
+But considering the price of 2,50€/m, I felt a stitch in my heart when thinking about throwing away this 25m role of [Aircell7][1]. Instead of accepting defeat, I pulled out my [Vector Network Analyzer][2] and measured the attenuation from 1-500MHz.
 
 ## Oxidized coax cable
 
@@ -34,7 +34,7 @@ It seems water entered from one side of the coax cable. While I had to cut off 2
 {{< figure src="/img/2013/03/Aircell7-245m-oxidierter-Innenleiter.png"
   link="/img/2013/03/Aircell7-245m-oxidierter-Innenleiter.png" >}}
 
-Before measuring S21 attenuation I scratched of the copper oxide and put tin-solder on the ends to ensure a proper contact. Surprisingly, the results where much better than expected!
+Before measuring S21 attenuation I scratched the copper oxide and put a tin-solder on the ends to ensure proper contact. Surprisingly, the results were much better than expected!
 
 <table border="1" cellspacing="1" cellpadding="10">
   <tr>
@@ -105,9 +105,9 @@ Before measuring S21 attenuation I scratched of the copper oxide and put tin-sol
       <b><font color="red">10,3dB</b></font></td> </tr> </table>
 
 ## Results
-Will I throw the cable in the trash can? No! Below 30MHz, the attenuation increased with 0,2dB only marginally. Even on 144MHz it could still be used in an emergency situation. Only above, the skin effect really starts to be noticeable. With 7dB additional attenuation of 432MHz, it's definitely not suitable for UHF anymore.
+Will I throw the cable in the trash can? No! Below 30MHz, the attenuation increased with 0,2dB only marginally. Even on 144MHz, it could still be used in an emergency. Only above, the skin effect starts to be noticeable. With 7dB additional attenuation of 432MHz, it's not suitable for UHF anymore.
 
-I hope this measurement might also helps you to take the right decision when you find next time a coax cable with an oxidized inner conductor. I didn't expect this result. I just saved 50€ and will continue using the cable on Shortwave.
+I hope this measurement might also help you to take the right decision when you find next time a coax cable with an oxidized inner conductor. I didn't expect this result. I just saved 50€ and will continue using the cable on Shortwave.
 
  [1]: http://www.kabel-kusch.de/Koaxkabel/SSB-Kabel/aircell7.htm
  [2]: https://www.dh1tw.de/evolution-of-the-dg8saq-vnwa
