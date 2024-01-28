@@ -27,13 +27,6 @@ You can create a calibration kit with male pin headers and a 1% 50Ohm SMD resist
 ## License
 
 I published the Design under the [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/deed.en).
-This means that you are allowed to:
-- **Share** - **copy** and **redistribute** the material in any medium or format
-- **Adapt** - **remix**, **transform**, and build upon the material for any purpose, even commercially
-
-However, you must:
-- give **appropriate credit** (Attribution)
-- distribute your modifications under the same license
 
 ## More pictures
 
