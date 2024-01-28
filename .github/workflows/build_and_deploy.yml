@@ -30,7 +30,7 @@ jobs:
         uses: burnett01/rsync-deployments@6.0.0
         with:
           switches: -avzr --delete
-          path: .
+          path: ./public
           remote_path: /var/www/dh1tw.de
           remote_host: dh1tw.de
           remote_user: ghactions
